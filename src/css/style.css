@@ -24,7 +24,7 @@ input[type=text] ,textarea{
 
 input[type=submit] {
 	width: 100%;
-	background-color: #d3a21a;
+	background-color: #337ab7;
 	color: white;
 	padding: 14px 20px;
 	margin: 8px 0;
@@ -86,6 +86,6 @@ a{
 	.like{
 		margin-left: -35px;
 	}
-			
-	
-	
+	.edit{
+		margin-left: -32px;
+	}

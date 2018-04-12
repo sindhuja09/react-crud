@@ -29,13 +29,12 @@ class App extends React.Component{
 
       updateQuote(updatedQuote) {
         let newQuotes;    
-        // new quote
         if(updatedQuote.quoteText!=''){
         if (updatedQuote._id == '') {
           updatedQuote._id = Date.now();
           newQuotes = this.state.quotes;
           newQuotes.push(updatedQuote);      
-        // updating existing quote
+      
         } else {
           newQuotes = this.state.quotes.map(quote => {
             if (updatedQuote._id == quote._id) {
@@ -61,11 +60,11 @@ class App extends React.Component{
           selectedQuote: this.emptyQuote
         })
       }
+      
       likeQuote(_id){
-          this.state.list[quote].liked = !this.state.list[quote].liked;
-          if(this.state.list[quote].liked === true) {
-            this.state.list[quote].count++;
-          }
+        console.log('clicked');
+          this.setState({
+          })
           this.forceUpdate();
         }
     
@@ -78,9 +77,10 @@ class App extends React.Component{
               newQuote={() => this.newQuote()}
               updateQuote={(quote) => this.updateQuote(quote)}
               deleteQuote={(_id) => this.deleteQuote(_id)} />
-          <div id="heading">  <h3>Added quotes:</h3></div>
+            <hr/>
+            <div id="heading">  <h3>Added quotes:</h3> </div>
             <div className="container">
-            
+          
               {this.state.quotes.map(quote =>(                 
                 <React.Fragment key={quote._id}>
                  <div className="row">
@@ -96,13 +96,12 @@ class App extends React.Component{
                    <p>---{quote.authorName}</p>
                    </a>
                   </div>
-                  <a href="#" 
-                   className="btn" 
-                   onClick={() => this.deleteQuote(quote._id)}
-                 ></a>
+                 
                  </div>
                  <div className="icons">
-                  <span className="like" onClick={()=>this.likeQuote(quote._id)}>{quote.count>0?quote.count:null}<FontAwesome.FaThumbsUp/></span>
+                
+                  <span className="edit" onClick={()=>this.selectQuote(quote._id)}><FontAwesome.FaEdit/></span>
+                  <span className="like" onClick={()=>this.likeQuote()}>{quote.onClick?<FontAwesome.FaThumbsODown/>:<FontAwesome.FaThumbsOUp/>}</span>
                     <span className="delete" onClick={()=>this.deleteQuote(quote._id)}><FontAwesome.FaTrashO/></span>
                   </div>
                 

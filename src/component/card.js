@@ -26,7 +26,7 @@ class Card extends React.Component{
            <main>
               <section>
                   <form className="quotesform" onSubmit={(e) => this.updateQuote(e)}>
-                      <h3>{ 'Add Quote'}</h3>
+                      <h3>{ 'Quotes'}</h3>
                       <textarea 
                         rows="4"  
                         placeholder="Quote"
