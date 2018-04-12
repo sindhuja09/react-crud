@@ -9,13 +9,9 @@ const quotes = [
    {
     _id: '1',
     quoteText:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non massa vitae risus fermentum ullamcorper.',
-    authorName:'Author1'
+    authorName:'sindhu'
    },
-   {
-    _id: '2',
-    quoteText:'Lorem ipsum dolor sit amet, consectetur adipiscing elit ...',
-    authorName:'Author2'
-   }
+   
   ];
 
 ReactDOM.render(    

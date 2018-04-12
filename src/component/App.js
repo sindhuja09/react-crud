@@ -78,9 +78,9 @@ class App extends React.Component{
               newQuote={() => this.newQuote()}
               updateQuote={(quote) => this.updateQuote(quote)}
               deleteQuote={(_id) => this.deleteQuote(_id)} />
-            <hr/>
+          <div id="heading">  <h3>Added quotes:</h3></div>
             <div className="container">
-            <h3>Added quotes:</h3>
+            
               {this.state.quotes.map(quote =>(                 
                 <React.Fragment key={quote._id}>
                  <div className="row">
