@@ -1,0 +1,88 @@
+body{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.quotesform{
+	width:400px;    
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+	margin:0 auto;
+}
+form > h3{
+	text-align: center;
+}
+input[type=text] ,textarea{
+	width: 100%;
+	padding: 12px 25px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	width: 100%;
+	background-color: #d3a21a;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+hr{
+	margin:15px 0;
+}
+
+.container{
+	width:90%;
+	padding:15px;
+	margin:0 auto;
+	display:flex;
+}
+
+.row{
+	width:30%;
+	padding:0 15px;   
+}
+
+.list_quotes{
+	border-radius: 3%;
+	background:pink;
+	padding: 20px; 
+}
+
+blockquote{
+	white-space: nowrap; 
+	overflow: hidden;
+	text-overflow: ellipsis; 
+}
+
+.list_quotes p{
+	float: right;
+	margin: 0;
+	color: white;
+	font-size: 12px;
+}
+
+a{
+	text-decoration: none;
+}
+
+.quotes-list {
+	padding-top: 2%;
+}
+	.delete{
+		margin-left: -35px;
+	}
+	.like{
+		margin-left: -35px;
+	}
+			
+	
+	
