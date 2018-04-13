@@ -8,11 +8,13 @@ class App extends React.Component{
         this.emptyQuote = {
             _id: '',
             quoteText: '',
-            authorName: ''
+            authorName: '',
+            likes:0
           };
           this.state = {
             quotes: props.quotes,
-            selectedQuote: this.emptyQuote
+            selectedQuote: this.emptyQuote,
+            
           }
     }
     selectQuote(_id) {
@@ -61,12 +63,12 @@ class App extends React.Component{
         })
       }
       
-      likeQuote(_id){
-        console.log('clicked');
-          this.setState({
-          })
+      
+        likeQuote(_id,index){ 
+          console.log('clicked');
+          this.state.quotes[index].likes++; 
           this.forceUpdate();
-        }
+          }     
     
     render(){
         return(
@@ -81,7 +83,7 @@ class App extends React.Component{
             <div id="heading">  <h3>Added quotes:</h3> </div>
             <div className="container">
           
-              {this.state.quotes.map(quote =>(                 
+            {this.state.quotes.map((quote,index) =>(                
                 <React.Fragment key={quote._id}>
                  <div className="row">
                   <div className="list_quotes">
@@ -101,7 +103,9 @@ class App extends React.Component{
                  <div className="icons">
                 
                   <span className="edit" onClick={()=>this.selectQuote(quote._id)}><FontAwesome.FaEdit/></span>
-                  <span className="like" onClick={()=>this.likeQuote()}>{quote.onClick?<FontAwesome.FaThumbsODown/>:<FontAwesome.FaThumbsOUp/>}</span>
+                  <span  onClick={() => this.likeQuote(quote._id,index)}
+                      className="like">
+                      <FontAwesome.FaThumbsOUp/>{quote.likes>0?quote.likes:0}</span>
                     <span className="delete" onClick={()=>this.deleteQuote(quote._id)}><FontAwesome.FaTrashO/></span>
                   </div>
                 
